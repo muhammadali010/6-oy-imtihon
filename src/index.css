@@ -11,6 +11,7 @@ body {
   height: 460px;
   padding: 20px;
   background-color: #fff;
+  border-radius: 0px 30px 30px 0px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .continer{
@@ -21,6 +22,7 @@ width: 1300px;
 .bigimg{
 width: 975px;
 height: 500px;
+border-radius: 20px 0px 0px 20px;
 size: cover;
 }
 input[type="text"],
@@ -30,8 +32,12 @@ input[type="email"] {
   padding: 10px;
   margin: 10px 0;
   box-sizing: border-box;
+  border: none;
+  background-color: #f2f2f2;
 }
-
+button[type='submit']{
+background-color: #007aff;
+}
 button {
   width: 100%;
   padding: 10px;
@@ -40,7 +46,6 @@ button {
   border: none;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #45a049;
 }
