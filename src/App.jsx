@@ -22,9 +22,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/register" element={<Register />} />
-        <Route
-          path="/admin"
-          element={token ? <Admin onLogout={handleLogout} /> : <Navigate to="/login" />}
+        <Route path="/admin" element={token ? <Admin onLogout={handleLogout} /> : <Navigate to="/login" />}
         />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>

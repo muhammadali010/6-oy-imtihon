@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import img from '../images/splendor-photo-of-river-surrounded-by-trees-and-mountains-wallpaper-thumb.jpg'
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -30,6 +31,8 @@ function Login({ onLogin }) {
   };
 
   return (
+    <div className="continer">
+      <img className="bigimg" src={img} alt="img" />
     <div className="container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
@@ -54,6 +57,7 @@ function Login({ onLogin }) {
         <button type="submit">Login</button>
       </form>
       <p>Don't have an account? <button onClick={() => navigate("/register")}>Register here</button></p>
+    </div>
     </div>
   );
 }

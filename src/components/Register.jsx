@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import img2 from '../images/nature-photography-landscape-lighthouse-wallpaper-preview.jpg'
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -34,6 +35,8 @@ function Register() {
   };
 
   return (
+    <div className="continer">
+      <img className="bigimg" src= {img2} alt="" />
     <div className="container">
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
@@ -58,6 +61,7 @@ function Register() {
         <button type="submit">Register</button>
       </form>
       <p>Already have an account? <button onClick={() => navigate("/login")}>Login here</button></p>
+    </div>
     </div>
   );
 }

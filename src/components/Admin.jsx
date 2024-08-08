@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Admin({ onLogout }) {
   const [formData, setFormData] = useState({ name: "", email: "", age: "" });
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const savedData = JSON.parse(localStorage.getItem("adminData")) || [];
+    setData(savedData);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -11,8 +16,10 @@ function Admin({ onLogout }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setData((prev) => [...prev, formData]);
+    const updatedData = [...data, formData];
+    setData(updatedData);
     setFormData({ name: "", email: "", age: "" });
+    localStorage.setItem("adminData", JSON.stringify(updatedData));
   };
 
   return (
